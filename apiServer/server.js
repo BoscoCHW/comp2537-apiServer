@@ -8,6 +8,7 @@ const cors = require("cors");
 const db = require("./config/database");
 const Event = require("./models/events");
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -123,4 +124,4 @@ app.delete("/events/:id", async (req, res) => {
   res.json(result);
 });
 
-app.listen(3000, () => console.log("Server listening on port 3000."));
+app.listen(port, () => console.log("Server listening on port 3000."));
